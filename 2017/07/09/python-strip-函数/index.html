@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>python的典型实例 | Hexo</title>
+  <title>python strip()函数 以及 yield | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="date: 2017-07-07 18:21:52 tags:nonlocal关键字用来在函数或其他作用域中使用外层(非全局)变量。">
+  <meta name="description" content="python strip()函数声明：s为字符串，rm为要删除的字符序列 s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符 s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符 s.rstrip(rm)    删除s字符串中结尾处，位于 rm删除序列的字符 注意：  当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python的典型实例">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/python的典型实例/index.html">
+<meta property="og:title" content="python strip()函数 以及 yield">
+<meta property="og:url" content="http://yoursite.com/2017/07/09/python-strip-函数/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="date: 2017-07-07 18:21:52 tags:nonlocal关键字用来在函数或其他作用域中使用外层(非全局)变量。">
-<meta property="og:updated_time" content="2017-07-09T09:51:25.030Z">
+<meta property="og:description" content="python strip()函数声明：s为字符串，rm为要删除的字符序列 s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符 s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符 s.rstrip(rm)    删除s字符串中结尾处，位于 rm删除序列的字符 注意：  当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,">
+<meta property="og:image" content="http://images.cnitblog.com/blog/408927/201305/23233214-3fc2b95ec7414fa7b582397d2233948c.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/408927/201305/23233043-1bb3fe26edf24259b25bb026464c3656.png">
+<meta property="og:updated_time" content="2017-07-09T09:51:45.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python的典型实例">
-<meta name="twitter:description" content="date: 2017-07-07 18:21:52 tags:nonlocal关键字用来在函数或其他作用域中使用外层(非全局)变量。">
+<meta name="twitter:title" content="python strip()函数 以及 yield">
+<meta name="twitter:description" content="python strip()函数声明：s为字符串，rm为要删除的字符序列 s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符 s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符 s.rstrip(rm)    删除s字符串中结尾处，位于 rm删除序列的字符 注意：  当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,">
+<meta name="twitter:image" content="http://images.cnitblog.com/blog/408927/201305/23233214-3fc2b95ec7414fa7b582397d2233948c.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -165,50 +168,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python的典型实例" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-strip-函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      python的典型实例
+      python strip()函数 以及 yield
     </h1>
   
 
         
-        <a href="/2017/07/09/python的典型实例/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.023Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+        <a href="/2017/07/09/python-strip-函数/" class="archive-article-date">
+  	<time datetime="2017-07-09T09:37:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date: 2017-07-07 18:21:52</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p><code>nonlocal</code>关键字用来在函数或其他作用域中使用外层(非全局)变量。<br><a id="more"></a></p>
+        <h3 id="python-strip-函数"><a href="#python-strip-函数" class="headerlink" title="python strip()函数"></a>python strip()函数</h3><p>声明：s为字符串，rm为要删除的字符序列</p>
+<p>s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符</p>
+<p>s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符</p>
+<p>s.rstrip(rm)    删除s字符串中结尾处，位于 rm删除序列的字符</p>
+<p>注意：</p>
 <ol>
-<li><p>不知道字符串转大写是upper()，转小写是lower()</p>
-</li>
-<li><p>忘记字符串也可以切片了</p>
-</li>
-<li><p>字符串的连接原来可以用<code>加号+</code></p>
-</li>
+<li>当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,  ‘ ‘)<br><img src="http://images.cnitblog.com/blog/408927/201305/23233214-3fc2b95ec7414fa7b582397d2233948c.png" alt="图"></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> name[<span class="number">0</span>].upper()+name[<span class="number">1</span>:].lower()</div><div class="line">L1 = [<span class="string">'adam'</span>, <span class="string">'LISA'</span>, <span class="string">'barT'</span>]</div><div class="line">L2 = list(map(normalize, L1))</div><div class="line">print(L2)</div></pre></td></tr></table></figure>
-<p>name[0].upper()  是首字母大写<br>name[1:].lower() 从第二个字母开始全都小写</p>
-<p>字符串转数的算法已经在示例中已经有了，也很好理解。转成浮点数的难点在于小数点两遍的数字处理方法不一样。我想肯定需要一个判断句，判断在小数点的左右，而采用不同的方法。同时，还要一个参数来记住小数点的位置。最终，又是参考各位大神，又是参照作者的答案。大概是懂了。</p>
-<p>作者的答案:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line">CHAR_TO_FLOAT = &#123;</div><div class="line">                <span class="string">'0'</span>: <span class="number">0</span>,</div><div class="line">                <span class="string">'1'</span>: <span class="number">1</span>,</div><div class="line">                <span class="string">'2'</span>: <span class="number">2</span>,</div><div class="line">                <span class="string">'3'</span>: <span class="number">3</span>,</div><div class="line">                <span class="string">'4'</span>: <span class="number">4</span>,</div><div class="line">                <span class="string">'5'</span>: <span class="number">5</span>,</div><div class="line">                <span class="string">'6'</span>: <span class="number">6</span>,</div><div class="line">                <span class="string">'7'</span>: <span class="number">7</span>,</div><div class="line">                <span class="string">'8'</span>: <span class="number">8</span>,</div><div class="line">                <span class="string">'9'</span>: <span class="number">9</span>,</div><div class="line">                <span class="string">'.'</span>: <span class="number">-1</span></div><div class="line">                &#125;</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">str2float</span><span class="params">(s)</span>:</span></div><div class="line">    nums = map(<span class="keyword">lambda</span> ch: CHAR_TO_FLOAT[ch], s)</div><div class="line">    point = <span class="number">0</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_float</span><span class="params">(f, n)</span>:</span></div><div class="line">    <span class="keyword">nonlocal</span> point</div><div class="line">    <span class="keyword">if</span> n == <span class="number">-1</span>:</div><div class="line">        point = <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> f</div><div class="line">    <span class="keyword">if</span> point == <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> f * <span class="number">10</span> + n</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        point = point * <span class="number">10</span></div><div class="line">        <span class="keyword">return</span> f + n / point</div><div class="line"> <span class="keyword">return</span> reduce(to_float, nums, <span class="number">0.0</span>)</div><div class="line"> print(str2float(<span class="string">'0'</span>))</div><div class="line"> print(str2float(<span class="string">'123.456'</span>))</div><div class="line"> print(str2float(<span class="string">'123.45600'</span>))</div><div class="line"> print(str2float(<span class="string">'0.1234'</span>))</div></pre></td></tr></table></figure></p>
-<p>由于to_float传入的数据都是数而不是字符，因此CHAR_TO_FLOAT里面定义.为0-9以外的数，加以区分。if n == -1:用来判断是否已经到小数点的位置，如果到了则改变point的值，point可以说是记录了当前小数点的位置，默认为0。然后根据point值来判断小数点的位置，以确定使用哪个转换算法。return  reduce(to_float,nums,0.0)中有一项是0.0，是为了转换整数字符为浮点数。如果不添加0.0，则CHAR_TO_FLOAT里的value都要改成浮点数的形式，key值不用改，小数点对应的数值也可<br>以不改。</p>
-<h5 id="筛选出字符串类型并展示："><a href="#筛选出字符串类型并展示：" class="headerlink" title="筛选出字符串类型并展示："></a>筛选出字符串类型并展示：</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">L1=[<span class="string">'hello'</span>,<span class="string">'world'</span>,<span class="number">18</span>,<span class="string">'apple'</span>,None]</div><div class="line">L2=[]</div><div class="line">n=<span class="number">1</span></div><div class="line"><span class="keyword">for</span> s <span class="keyword">in</span> L1:</div><div class="line">    <span class="keyword">if</span> isinstance(s,str)==<span class="number">1</span>:</div><div class="line">        L2.append(s.<span class="built_in">lower</span>())</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="built_in">print</span>(<span class="string">'the number of non str is %d '</span> %(n))</div><div class="line">        n=n+<span class="number">1</span></div><div class="line">    <span class="built_in">print</span>(L2)</div><div class="line">L2=[s.<span class="built_in">lower</span>() <span class="keyword">for</span> s <span class="keyword">in</span> L1 <span class="keyword">if</span> isinstance(s,str)==<span class="number">1</span>]</div><div class="line"><span class="built_in">print</span>(L2)</div></pre></td></tr></table></figure>
-<h5 id="斐波拉契数列"><a href="#斐波拉契数列" class="headerlink" title="斐波拉契数列"></a>斐波拉契数列</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span></span>:</div><div class="line">        n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> n &lt; <span class="symbol">max:</span></div><div class="line">        print(b)</div><div class="line">        a, b = b, a + b</div><div class="line">        n = n + <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'done'</span></div><div class="line">上面的函数可以输出斐波那契数列的前 N 个数：<span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">6</span>)</div></pre></td></tr></table></figure>
-<h5 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h5><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">def triangles():</div><div class="line"> <span class="attr">j</span> = <span class="number">0</span></div><div class="line"> <span class="attr">L1</span> = []</div><div class="line"> <span class="attr">L2</span> = []</div><div class="line"> <span class="attr">S1</span> = <span class="number">0</span></div><div class="line"> while j &lt; <span class="number">10</span>:</div><div class="line">  <span class="attr">s</span> = <span class="number">0</span></div><div class="line">  for i <span class="keyword">in</span> L1:</div><div class="line">   <span class="attr">S1</span> = s + i</div><div class="line">   <span class="attr">s</span> = i                  <span class="comment">#記錄上個循環i的值</span></div><div class="line">   L2.append(S1)</div><div class="line">  L2.append(<span class="number">1</span>)</div><div class="line">  yield L2                      <span class="comment">#生成器 返回L2 list 列表的值</span></div><div class="line">  <span class="attr">L1</span> = L2[:]                    <span class="comment">#將L1指向L2 變成上一次循環的list</span></div><div class="line">  <span class="attr">L2</span> = []                       <span class="comment">#L2保存的是當次循環的list 初始化她</span></div><div class="line">  <span class="attr">j</span> = j + <span class="number">1</span></div><div class="line"><span class="attr">n</span> = <span class="number">0</span></div><div class="line">for x <span class="keyword">in</span> triangles():</div><div class="line"> print(x)</div><div class="line"> <span class="attr">n</span> = n + <span class="number">1</span></div><div class="line"> <span class="keyword">if</span> <span class="attr">n</span> == <span class="number">10</span>:</div><div class="line">  break</div></pre></td></tr></table></figure>
-<h5 id="滤掉非回数"><a href="#滤掉非回数" class="headerlink" title="滤掉非回数"></a>滤掉非回数</h5><p>回数是指从左向右读和从右向左读都是一样的数，例如 12321 ， 909 。请<br>利用 filter() 滤掉非回数<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">i</span><span class="params">(n)</span></span>:</div><div class="line">    <span class="keyword">return</span> str(n) == str(n)[<span class="symbol">:</span><span class="symbol">:-</span><span class="number">1</span>]</div><div class="line">output = filter(i, range(<span class="number">1</span>, <span class="number">10000</span>))</div><div class="line">print(list(output))</div></pre></td></tr></table></figure></p>
-<h5 id="把一个序列中的空字符串删掉"><a href="#把一个序列中的空字符串删掉" class="headerlink" title="把一个序列中的空字符串删掉"></a>把一个序列中的空字符串删掉</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">not_empty</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">return</span> s <span class="keyword">and</span> s.strip()</div><div class="line">list(filter(not_empty, [<span class="string">'A'</span>, <span class="string">''</span>, <span class="string">'B'</span>, <span class="keyword">None</span>, <span class="string">'C'</span>, <span class="string">' '</span>]))</div><div class="line"><span class="comment"># 结果: ['A', 'B', 'C']</span></div></pre></td></tr></table></figure>
-<h5 id="删掉偶数，只保留奇数"><a href="#删掉偶数，只保留奇数" class="headerlink" title="删掉偶数，只保留奇数"></a>删掉偶数，只保留奇数</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span></span>:</div><div class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></div><div class="line">list(filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>]))</div><div class="line"><span class="comment"># 结果: [1, 5, 9, 15]</span></div></pre></td></tr></table></figure>
-<h5 id="将一个16进制的数转换为十进制："><a href="#将一个16进制的数转换为十进制：" class="headerlink" title="将一个16进制的数转换为十进制："></a>将一个16进制的数转换为十进制：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">int2</span><span class="params">(x, base=<span class="number">16</span>)</span>:</span></div><div class="line">    <span class="keyword">return</span> int(x, base)</div><div class="line">print(int2(<span class="string">'12345'</span>))</div></pre></td></tr></table></figure>
-<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>假设我们用一组 tuple 表示学生名字和成绩：<br>L = [(‘Bob’, 75), (‘Adam’, 92), (‘Bart’, 66), (‘Lisa’, 88)]</p>
-<p>请用 sorted() 对上述列表分别按成绩从高到低排序：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">L = [(<span class="string">'Bob'</span>, <span class="number">75</span>), (<span class="string">'Adam'</span>, <span class="number">92</span>), (<span class="string">'Bart'</span>, <span class="number">66</span>), (<span class="string">'Lisa'</span>, <span class="number">88</span>)]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">by_name</span><span class="params">(t)</span>:</span></div><div class="line">    <span class="keyword">return</span> t[<span class="number">1</span>]</div><div class="line">L2 = sorted(L, key=by_name, reverse = <span class="keyword">True</span>)</div><div class="line">print(L2)</div></pre></td></tr></table></figure></p>
+<p>2.这里的rm删除序列是只要边（开头或结尾）上的字符在删除序列内，就删除掉。<br><img src="http://images.cnitblog.com/blog/408927/201305/23233043-1bb3fe26edf24259b25bb026464c3656.png" alt=""></p>
+<h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><p><a href="http://www.cnblogs.com/tqsummer/archive/2010/12/27/1917927.html" target="_blank" rel="external">关于Python中的yield</a></p>
+<p>yield返回的是一个生成器    生成器最大的却别是它并不返回一个真正的数组<br>yield 则是这个神奇的东西，和return一样，他返回东西，但他返回的是一个生成器<br>生成器是通过一个或多个yield表达式构成的函数，每一个生成器都是一个迭代器（但是迭代器不一定是生成器）。<br>如果一个函数包含yield关键字，这个函数就会变为一个生成器。<br>生成器并不会一次返回所有结果，而是每次遇到yield关键字后返回相应结果，并保留函数当前的运行状态，等待下一次的调用。</p>
 
       
 
@@ -288,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/python的典型实例/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/python-strip-函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,15 +292,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/09/python中lambda表达式学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          python中lambda表达式学习
-        
-      </div>
-    </a>
   
+    <a href="/2017/07/09/我的第一篇博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
