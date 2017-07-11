@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>python 自学笔记 | Hexo</title>
+  <title>Python 多线程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日期: 2017-07-07 17:17:42tags:对于单个字符的编码，Python 提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：">
+  <meta name="description" content="通过看博客才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题123456if __name__ == &apos;__main__&apos;:    for t in threads:        t.setDaemon(True)        t.start()    t.join()print &quot;all over %s&quot; %c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 自学笔记">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/python-自学笔记/index.html">
+<meta property="og:title" content="Python 多线程">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/Python-多线程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="日期: 2017-07-07 17:17:42tags:对于单个字符的编码，Python 提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：">
-<meta property="og:updated_time" content="2017-07-07T11:18:04.028Z">
+<meta property="og:description" content="通过看博客才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题123456if __name__ == &apos;__main__&apos;:    for t in threads:        t.setDaemon(True)        t.start()    t.join()print &quot;all over %s&quot; %c">
+<meta property="og:updated_time" content="2017-07-11T06:11:53.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python 自学笔记">
-<meta name="twitter:description" content="日期: 2017-07-07 17:17:42tags:对于单个字符的编码，Python 提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：">
+<meta name="twitter:title" content="Python 多线程">
+<meta name="twitter:description" content="通过看博客才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题123456if __name__ == &apos;__main__&apos;:    for t in threads:        t.setDaemon(True)        t.start()    t.join()print &quot;all over %s&quot; %c">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,200 +159,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python-自学笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-多线程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      python 自学笔记
+      Python 多线程
     </h1>
   
 
         
-        <a href="/2017/07/09/python-自学笔记/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+        <a href="/2017/07/11/Python-多线程/" class="archive-article-date">
+  	<time datetime="2017-07-11T05:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="日期-2017-07-07-17-17-42"><a href="#日期-2017-07-07-17-17-42" class="headerlink" title="日期: 2017-07-07 17:17:42"></a>日期: 2017-07-07 17:17:42</h4><h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>对于单个字符的编码，Python 提供了<code>ord()</code>函数获取字符的整数表示，<code>chr()</code>函数把编码转换为对应的字符：<br><a id="more"></a></p>
-<pre><code>&gt;&gt;&gt; ord(&apos;A&apos;)
-65
-&gt;&gt;&gt; ord(&apos;中&apos;)
-20013
-&gt;&gt;&gt; chr(66)
-&apos;B&apos;
-&gt;&gt;&gt; chr(25991)
-&apos;文&apos;
-</code></pre><p>以 Unicode 表示的 str 通过 <code>encode()</code> 方法可以编码为指定的 bytes ，例如：</p>
-<pre><code>&gt;&gt;&gt; &apos;ABC&apos;.encode(&apos;ascii&apos;)
-b&apos;ABC&apos;
-&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;utf-8&apos;)
-b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
-&gt;&gt;&gt; b&apos;ABC&apos;.decode(&apos;ascii&apos;)
-&apos;ABC&apos;
-&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)
-&apos;中文&apos;
-</code></pre><p>计算字符串长度：</p>
-<pre><code>&gt;&gt;&gt; len(&apos;ABC&apos;)
-3
-</code></pre><p>保留小数:</p>
-<pre><code>&gt;&gt;&gt; &apos;%2d-%02d&apos; % (3, 1)
-&apos; 3-01&apos;
-&gt;&gt;&gt; &apos;%.2f&apos; % 3.1415926
-&apos;3.14&apos;
-</code></pre><p>有些时候，字符串里面的 % 是一个普通字符怎么办？这个时候就需要转<br>义，用 %% 来表示一个 % ：</p>
-<pre><code>&gt;&gt;&gt; &apos;growth rate: %d %%&apos; % 7
-&apos;growth rate: 7 %&apos;
-</code></pre><p>list列表用法：</p>
-<pre><code>&gt;&gt;&gt; classmates = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-&gt;&gt;&gt; classmates
-[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-&gt;&gt;&gt; classmates[0]
-&apos;Michael&apos;
-</code></pre><p>获取最后一个元素：</p>
-<pre><code>&gt;&gt;&gt; classmates[-1]
-&apos;Tracy&apos;
-</code></pre><p>往 list 中追加元素到末尾：</p>
-<pre><code>&gt;&gt;&gt; classmates.append(&apos;Adam&apos;)
-</code></pre><p>把元素插入到指定的位置，比如索引号为 1 的位置：</p>
-<pre><code>&gt;&gt;&gt; classmates.insert(1, &apos;Jack&apos;)
-</code></pre><p>要删除指定位置的元素，用 pop(i) 方法，其中 i 是索引位置：</p>
-<pre><code>&gt;&gt;&gt; classmates.pop(1)
-</code></pre><p>要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</p>
-<pre><code>&gt;&gt;&gt; classmates[1] = &apos;Sarah&apos;
-</code></pre><p>Python 的循环有两种，一种是 <code>for...in</code> 循环，依次把 list 或 tuple 中的每个元素迭代出来，看例子：</p>
-<pre><code>names = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-for name in names:
-    print(name)
-</code></pre><p>执行这段代码，会依次打印 names 的每一个元素：</p>
-<p>Michael,   Bob,  Tracy</p>
-<pre><code>sum = 0
-for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
-    sum = sum + x
-print(sum)
+        <p>  通过看<a href="http://www.cnblogs.com/fnng/p/3670789.html" target="_blank" rel="external">博客</a>才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="variable">__name__</span> == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">for</span> t <span class="built_in">in</span> threads:</div><div class="line">        t.setDaemon(<span class="literal">True</span>)</div><div class="line">        t.start()</div><div class="line">    t.<span class="built_in">join</span>()</div><div class="line">print <span class="string">"all over %s"</span> %ctime()</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>虽然解决了主线程的结束导致子线程的结束，但是如果前面的进程执行速度较慢，后面的进程执行速度快，但是只有最后一个进程设置了t.join（），会导致前面的进程被主线程终止。例如：把music中sleep（7）休眠时间改为大于5，此问题就暴露出来了，当t2线程结束之后，程序结束，但是t1进程还没有执行完毕，这明显与我们的初衷不符。所以建议改成<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> t <span class="keyword">in</span> threads：</div><div class="line">    t.<span class="keyword">join</span>()</div></pre></td></tr></table></figure></p>
+<p>便可避免此问题</p>
 
-sum = 0
-for x in range(101):
-    sum = sum + x
-print(sum)
-</code></pre><p>第二种循环是 <code>while</code> 循环，只要条件满足，就不断循环，条件不满足时<br>退出循环。</p>
-<pre><code>sum = 0
-n = 99
-while n &gt; 0:
-    sum = sum + n
-    n = n - 2
-print(sum)
-</code></pre><p>重复元素在 set 中自动被过滤：</p>
-<pre><code>&gt;&gt;&gt; s = set([1, 1, 2, 2, 3, 3])
-&gt;&gt;&gt; s
-{1, 2, 3}
-&gt;&gt;&gt; s.add(4)
-&gt;&gt;&gt; s
-{1, 2, 3, 4}
-</code></pre><p>通过 remove(key) 方法可以删除元素：</p>
-<pre><code>&gt;&gt;&gt; s.remove(4)
-&gt;&gt;&gt; s
-{1, 2, 3}
-</code></pre><p><code>set</code> 可以看成数学意义上的无序和无重复元素的集合，因此，两个 set 可以做数学意义上的交集、并集等操作：</p>
-<pre><code>&gt;&gt;&gt; s1 = set([1, 2, 3])
-&gt;&gt;&gt; s2 = set([2, 3, 4])
-&gt;&gt;&gt; s1 &amp; s2
-{2, 3}
-&gt;&gt;&gt; s1 | s2
-{1, 2, 3, 4}
-</code></pre><p>而对于不可变对象，比如 str，对 str 进行操作呢：</p>
-<pre><code>&gt;&gt;&gt; a = &apos;abc&apos;
-&gt;&gt;&gt; a.replace(&apos;a&apos;, &apos;A&apos;)
-&apos;Abc&apos;
-&gt;&gt;&gt; a
-&apos;abc&apos;
-
-&gt;&gt;&gt; max(2, 3, 1, -5)
-3
-&gt;&gt;&gt; int(&apos;123&apos;)
-123
-&gt;&gt;&gt; int(12.34)
-12
-</code></pre><p>math包里含有数学运算有：<code>三角函数：cos,sin。。开平方sqrt()</code></p>
-<pre><code>&gt;&gt;&gt; import math
-&gt;&gt;&gt; math.sqrt(2)
-1.4142135623730951
-
-def power(x, n):
-    s = 1
-while n &gt; 0:
-    n = n - 1
-    s = s * x
-return s
-</code></pre><p>对于这个修改后的 power(x, n) 函数，可以计算任意 n 次方：</p>
-<pre><code>&gt;&gt;&gt; power(5, 2)
-25
-&gt;&gt;&gt; power(5, 3)
-125
-</code></pre><hr>
-<pre><code>def enroll(name, gender, age=6, city=&apos;Beijing&apos;):
-    print(&apos;name:&apos;, name)
-    print(&apos;gender:&apos;, gender)
-    print(&apos;age:&apos;, age)
-    print(&apos;city:&apos;, city)
-这样，大多数学生注册时不需要提供年龄和城市，只提供必须的两个参
-数：
-
-&gt;&gt;&gt; enroll(&apos;Sarah&apos;, &apos;F&apos;)
-name: Sarah
-gender: F
-age: 6
-city: Beijing
-</code></pre><hr>
-<pre><code>def calc(numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n * n
-    return sum
-&gt;&gt;&gt;  calc((1, 3, 5, 7))
-</code></pre><p>定义可变参数和定义一个 list 或 tuple 参数相比，仅仅在参数前面加了一个 <code>*</code> 号。</p>
-<pre><code>def calc(*numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n * n
-    return sum
-&gt;&gt;&gt; calc(1, 2)
-5
-
-&gt;&gt;&gt; nums = [1, 2, 3]
-&gt;&gt;&gt; calc(*nums)
-14
-
-def person(name, age, **kw):
-    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
-&gt;&gt;&gt; person(&apos;Michael&apos;, 30)
-name: Michael age: 30 other: {}
-&gt;&gt;&gt; person(&apos;Bob&apos;, 35, city=&apos;Beijing&apos;)
-name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
-</code></pre><p>递归函数：</p>
-<pre><code>def fact(n):
-    if n==1:
-        return 1
-    return n * fact(n - 1)
-&gt;&gt;&gt; fact(5)
-120
-</code></pre><p>函数的切片：</p>
-<pre><code>&gt;&gt;&gt; L[0:3]
-[&apos;Michael&apos;, &apos;Sarah&apos;, &apos;Tracy&apos;]
-</code></pre><p>L[0:3] 表示，从索引 0 开始取，直到索引 3 为止，但不包括索引 3 。</p>
-<pre><code>&gt;&gt;&gt; (0, 1, 2, 3, 4, 5)[:3]
-(0, 1, 2)
-&gt;&gt;&gt; &apos;ABCDEFG&apos;[:3]
-&apos;ABC&apos;
-</code></pre><p>前 10 个数，每两个取一个：</p>
-<pre><code>&gt;&gt;&gt; L[:10:2]
-[0, 2, 4, 6, 8]
-</code></pre>
       
 
       
@@ -431,7 +262,7 @@ name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/python-自学笔记/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/11/Python-多线程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -445,18 +276,9 @@ name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
   
 <nav id="article-nav">
   
-    <a href="/2017/07/09/我的第一篇博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          我的第一篇博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/09/python中lambda表达式学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python中lambda表达式学习</div>
+    <a href="/2017/07/09/python-strip-函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python strip()函数 以及 yield</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -469,7 +291,7 @@ name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="python-自学笔记" data-title="python 自学笔记" data-url="http://yoursite.com/2017/07/09/python-自学笔记/"></div>
+	<div class="ds-thread" data-thread-key="Python-多线程" data-title="Python 多线程" data-url="http://yoursite.com/2017/07/11/Python-多线程/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -492,8 +314,8 @@ name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2017/07/09/python-自学笔记/", 
-    sourceId: "python-自学笔记",
+    url: "http://yoursite.com/2017/07/11/Python-多线程/", 
+    sourceId: "Python-多线程",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -502,7 +324,7 @@ name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
   
 
   
-  <div id="SOHUCS" sid="python-自学笔记" ></div> 
+  <div id="SOHUCS" sid="Python-多线程" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 
