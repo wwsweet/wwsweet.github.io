@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>端口扫描 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="简单的端口扫描器代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="端口扫描">
+<meta property="og:url" content="http://yoursite.com/2017/07/13/端口扫描/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简单的端口扫描器代码：">
+<meta property="og:updated_time" content="2017-07-13T06:54:23.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="端口扫描">
+<meta name="twitter:description" content="简单的端口扫描器代码：">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,16 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-端口扫描" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-端口扫描" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/13/端口扫描/">端口扫描</a>
+    <h1 class="article-title" itemprop="name">
+      端口扫描
     </h1>
   
 
@@ -177,61 +179,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="简单的端口扫描器代码："><a href="#简单的端口扫描器代码：" class="headerlink" title="简单的端口扫描器代码："></a>简单的端口扫描器代码：</h6>
-        
-          <a class="article-more-a" href="/2017/07/13/端口扫描/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/13/端口扫描/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-python中的模块" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/12/python中的模块/">python中的模块</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/12/python中的模块/" class="archive-article-date">
-  	<time datetime="2017-07-12T07:43:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是模块，模块应该如何使用，见连接：http-www-cnblogs-com-dolphin0520-archive-2013-03-19-2969152-html"><a href="#什么是模块，模块应该如何使用，见连接：http-www-cnblogs-com-dolphin0520-archive-2013-03-19-2969152-html" class="headerlink" title="  什么是模块，模块应该如何使用，见连接：http://www.cnblogs.com/dolphin0520/archive/2013/03/19/2969152.html"></a>  什么是模块，模块应该如何使用，见连接：<a href="http://www.cnblogs.com/dolphin0520/archive/2013/03/19/2969152.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/archive/2013/03/19/2969152.html</a></h2><p><code>from math import *</code>是一次性引入math中所有的东西。</p>
-<p>后续学到模块的新东西再继续添加</p>
+        <h6 id="简单的端口扫描器代码："><a href="#简单的端口扫描器代码：" class="headerlink" title="简单的端口扫描器代码："></a>简单的端口扫描器代码：</h6><a id="more"></a>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="built_in">import</span> sys</div><div class="line">from socket <span class="built_in">import</span> *</div><div class="line"><span class="attr">host</span> = sys.argv[<span class="number">1</span>]                   <span class="comment">#读取端口及目标服务器</span></div><div class="line"><span class="attr">ports</span> = sys.argv[<span class="number">2</span>].split('-')</div><div class="line"></div><div class="line"><span class="attr">start_port</span> = int(ports[<span class="number">0</span>])           <span class="comment">#传递端口的范围</span></div><div class="line"><span class="attr">end_port</span> = int(ports[<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="attr">target_ip</span> = gethostbyname(host)      <span class="comment">#传递目标IP地址</span></div><div class="line"><span class="attr">opened_ports</span> = []</div><div class="line">                                         <span class="comment">#测试TCP端口连接</span></div><div class="line">for port <span class="keyword">in</span> range(start_port, end_port):      </div><div class="line">    <span class="attr">sock</span> = socket(AF_INET, SOCK_STREAM)    <span class="comment">#IPv4,TCP连接</span></div><div class="line">    sock.settimeout(<span class="number">10</span>)</div><div class="line">    <span class="attr">result</span> = sock.connec_ex(target_ip, port)</div><div class="line">    <span class="keyword">if</span> <span class="attr">result</span> == <span class="number">0</span>:</div><div class="line">        opened_ports.append(port)</div><div class="line"></div><div class="line">print('Opened poers:')</div><div class="line"></div><div class="line">for i <span class="keyword">in</span> opened_ports:     <span class="comment">#输出端口开放结果</span></div><div class="line">    print(i)</div></pre></td></tr></table></figure>
+<p> 然后用命令行的方式进行传参<code>python wsw.py 127.0.0.1 100-200</code><br>先用命令行进入wsw.py文件所在的文件，再执行上方代码。</p>
+<p> <code>AF_INET</code>（又称 PF_INET）是 IPv4 网络协议的套接字类型，AF_INET6则是IPv6 的；而 AF_UNIX 则是 Unix 系统本地通信。<br>选择 AF_INET 的目的就是使用 IPv4 进行通信。因为 IPv4 使用 32 位地址，相比IPv6 的 128 位来说，计算更快，便于用于局域网通信。而且 AF_INET 相比 AF_UNIX 更具通用性，因为 Windows 上有 AF_INET 而没有 AF_UNIX。</p>
+<p><code>SOCK_STREAM</code>：TCP是连接的，提供序列化的，可靠的，双向连接的字节流。支持带外数据传输</p>
+<h6 id="多线程端口扫描代码："><a href="#多线程端口扫描代码：" class="headerlink" title="多线程端口扫描代码："></a>多线程端口扫描代码：</h6><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="built_in">import</span> sys</div><div class="line"><span class="built_in">import</span> threading</div><div class="line">from socket <span class="built_in">import</span> *</div><div class="line">print('dsjfhdj')</div><div class="line">def tcp_test(port):</div><div class="line">    <span class="attr">sock</span> = socket(AF_INET, SOCK_STREAM)</div><div class="line">    sock.settimeout(<span class="number">10</span>)</div><div class="line">    <span class="attr">result</span> = sock.connect_ex((target_ip, port))</div><div class="line">    <span class="keyword">if</span> <span class="attr">result</span> == <span class="number">0</span>:</div><div class="line">        lock.acquire()          <span class="comment">#加锁</span></div><div class="line">        print(<span class="string">"Opened Port:"</span>,port)</div><div class="line">        lock.release()          <span class="comment">#释放锁</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="attr">__name__=='__main__':</span></div><div class="line">    <span class="attr">host</span> = sys.argv[<span class="number">1</span>]</div><div class="line">    <span class="attr">portstrs</span> = sys.argv[<span class="number">2</span>].split('-')</div><div class="line"></div><div class="line">    <span class="attr">start_port</span> = int(portstrs[<span class="number">0</span>])</div><div class="line">    <span class="attr">end_port</span> = int(portstrs[<span class="number">1</span>])</div><div class="line"></div><div class="line">    <span class="attr">target_ip</span> = gethostbyname(host)</div><div class="line">    <span class="attr">lock</span> = threading.Lock()</div><div class="line"></div><div class="line">    for port <span class="keyword">in</span> range(start_port, end_port):</div><div class="line">        threading.Thread(<span class="attr">target</span> = tcp_test, <span class="attr">args</span> = (port,))</div></pre></td></tr></table></figure>
+<p><code>ading.Thread(target = tcp_test, args = (port,))</code> 用来创建一个线程，该函数的第一个参数是一个线程中执行的函数，第二个参数必须是个元组，作为函数的输入，由于 tcp_test 函数只有一个参数，所以我们使用(port,)这种形式表示这个参数为元组。</p>
+<p>实现TCP测试函数，需要注意print输出时候需要<code>加锁</code>，如果不加锁可能会出现多个输出混合在一起的错误状态，而锁需要在程序启动时创建，从而能让新建的线程共享这个锁， 注意当输出执行完后要<code>释放锁lock</code>。</p>
+<h6 id="创建服务端和客户端："><a href="#创建服务端和客户端：" class="headerlink" title="创建服务端和客户端："></a>创建服务端和客户端：</h6><p>代码详解：<br><a href="http://www.cnblogs.com/kellyseeme/p/5525026.html" target="_blank" rel="external">http://www.cnblogs.com/kellyseeme/p/5525026.html</a></p>
+<p>python socket编程详细介绍：<br><a href="http://blog.csdn.net/rebelqsp/article/details/22109925" target="_blank" rel="external">http://blog.csdn.net/rebelqsp/article/details/22109925</a></p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢啦~~~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -240,327 +221,125 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/12/python中的模块/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/13/端口扫描/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-Python-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/Python-多线程/">Python 多线程</a>
-    </h1>
   
-
-        
-        <a href="/2017/07/11/Python-多线程/" class="archive-article-date">
-  	<time datetime="2017-07-11T05:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  通过看<a href="http://www.cnblogs.com/fnng/p/3670789.html" target="_blank" rel="external">博客</a>才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="variable">__name__</span> == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">for</span> t <span class="built_in">in</span> threads:</div><div class="line">        t.setDaemon(<span class="literal">True</span>)</div><div class="line">        t.start()</div><div class="line">    t.<span class="built_in">join</span>()</div><div class="line">print <span class="string">"all over %s"</span> %ctime()</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/07/11/Python-多线程/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/11/Python-多线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2017/07/12/python中的模块/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python中的模块</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-python-strip-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/python-strip-函数/">python strip()函数 以及 yield</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/09/python-strip-函数/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:37:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="python-strip-函数"><a href="#python-strip-函数" class="headerlink" title="python strip()函数"></a>python strip()函数</h3><p>声明：s为字符串，rm为要删除的字符序列</p>
-<p>s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符</p>
-<p>s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符<br>
-        
-          <a class="article-more-a" href="/2017/07/09/python-strip-函数/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/python-strip-函数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="端口扫描" data-title="端口扫描" data-url="http://yoursite.com/2017/07/13/端口扫描/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/我的第一篇博客/">我的第一篇博客</a>
-    </h1>
   
-
-        
-        <a href="/2017/07/09/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.102Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="日期-2017-07-06-14-45-52"><a href="#日期-2017-07-06-14-45-52" class="headerlink" title="日期: 2017-07-06 14:45:52"></a>日期: 2017-07-06 14:45:52</h4><h2 id="正文"><a href="#正文" class="headerlink" title="正文:"></a>正文:</h2><p>第一次用博客，写一篇文章记录一下。</p>
-<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1733071988,3600838707&amp;fm=117&amp;gp=0.jpg" alt="图"><br>
-        
-          <a class="article-more-a" href="/2017/07/09/我的第一篇博客/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/我的第一篇博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-python-自学笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/python-自学笔记/">python 自学笔记</a>
-    </h1>
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2017/07/13/端口扫描/", 
+    sourceId: "端口扫描",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        
-        <a href="/2017/07/09/python-自学笔记/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="日期-2017-07-07-17-17-42"><a href="#日期-2017-07-07-17-17-42" class="headerlink" title="日期: 2017-07-07 17:17:42"></a>日期: 2017-07-07 17:17:42</h4><h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>对于单个字符的编码，Python 提供了<code>ord()</code>函数获取字符的整数表示，<code>chr()</code>函数把编码转换为对应的字符：<br>
-        
-          <a class="article-more-a" href="/2017/07/09/python-自学笔记/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/python-自学笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
   
-    <article id="post-python中lambda表达式学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/python中lambda表达式学习/">python中lambda表达式学习</a>
-    </h1>
+  <div id="SOHUCS" sid="端口扫描" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "true"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-        
-        <a href="/2017/07/09/python中lambda表达式学习/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.033Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2017-07-07 18:09:14</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>lambda只是一个表达式，函数体比def简单很多。<br>
-        
-          <a class="article-more-a" href="/2017/07/09/python中lambda表达式学习/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/python中lambda表达式学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-python的典型实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/python的典型实例/">python的典型实例</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/09/python的典型实例/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:03:52.023Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2017-07-07 18:21:52</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p><code>nonlocal</code>关键字用来在函数或其他作用域中使用外层(非全局)变量。<br>
-        
-          <a class="article-more-a" href="/2017/07/09/python的典型实例/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/python的典型实例/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
 
 
@@ -583,8 +362,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
