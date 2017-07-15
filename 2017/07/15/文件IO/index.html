@@ -14,10 +14,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/15/文件IO/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="文本文件：打开文件：">
-<meta property="og:updated_time" content="2017-07-15T06:44:29.226Z">
+<meta property="og:image" content="http://i.imgur.com/yGo3Oj3.png">
+<meta property="og:updated_time" content="2017-07-15T06:52:55.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件IO">
 <meta name="twitter:description" content="文本文件：打开文件：">
+<meta name="twitter:image" content="http://i.imgur.com/yGo3Oj3.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -189,28 +191,17 @@
 <p>写文件：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">from io import StringIO</div><div class="line">f = StringIO()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.write(<span class="string">'hello'</span>)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.write(<span class="string">' '</span>)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.write(<span class="string">'world!'</span>)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.getvalue()</span></span>)</div><div class="line"></div><div class="line">输出：</div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">6</span></div><div class="line">hello world!</div></pre></td></tr></table></figure></p>
 <p><strong>BytesIO</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">from io import BytesIO</div><div class="line">f = BytesIO()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>)</span></span>))</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(f.getvalue()</span></span>)</div><div class="line"></div><div class="line">输出：</div><div class="line"><span class="number">6</span></div><div class="line">b<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span></div></pre></td></tr></table></figure></p>
 <h5 id="操作文件和目录："><a href="#操作文件和目录：" class="headerlink" title="操作文件和目录："></a>操作文件和目录：</h5><p>os模块<br><figure class="highlight moonscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="built_in">os</span></div><div class="line"><span class="built_in">print</span>(<span class="built_in">os</span>.name)   #操作类型</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p>获取详细的系统信息，可以调用 uname() 函数：<br><code>print(os.uname())</code></p>
-</li>
-<li><p>操作系统中定义的环境变量，全部保存在 os.environ 这个变量中，可以直接查看：<br><code>print(os.environ)</code></p>
-</li>
-<li><p>要获取某个环境变量的值，可以调用<br><code>print(os.environ.get(&#39;PATH&#39;))</code></p>
-</li>
-<li><p>查看当前目录的绝对路径:<br><code>print( os.path.abspath(&#39;.&#39;))</code></p>
-</li>
-<li><p>把一个路径拆分为两部分，后一部分总 是最后级别的目录或文件名：<br><code>print( os.path.split(&#39;/Users/michael/testdir/file.txt&#39;))</code></p>
-</li>
-<li><p>直接得到文件扩展名<br><code>print(os.path.splitext(&#39;/path/to/file.txt&#39;))</code></p>
-</li>
-<li><p>对文件重命名:<br><code>os.rename(&#39;test.txt&#39;, &#39;test.py&#39;)</code></p>
-</li>
-<li><p>删掉文件:<br><code>os.remove(&#39;test.py&#39;)</code></p>
-</li>
-<li><p>要列出当前目 录下的所有目录:<br><code>[x for x in os.listdir(&#39;.&#39;) if os.path.isdir(x)]</code></p>
-</li>
-<li><p>要列出所有的 .py 文件:<br><code>[x for x in os.listdir(&#39;.&#39;) if os.path.isfile(x) and  os.path.splitext(x)[1]==&#39;.py&#39;]</code></p>
-</li>
-</ol>
+<p>1.获取详细的系统信息，可以调用 uname() 函数：<br><code>print(os.uname())</code></p>
+<p>2.操作系统中定义的环境变量，全部保存在 os.environ 这个变量中，可以直接查看：<br><code>print(os.environ)</code></p>
+<p>3.要获取某个环境变量的值，可以调用<br><code>print(os.environ.get(&#39;PATH&#39;))</code></p>
+<p>4.查看当前目录的绝对路径:<br><code>print( os.path.abspath(&#39;.&#39;))</code></p>
+<p>5.把一个路径拆分为两部分，后一部分总 是最后级别的目录或文件名：<br><code>print( os.path.split(&#39;/Users/michael/testdir/file.txt&#39;))</code></p>
+<p>6.直接得到文件扩展名<br><code>print(os.path.splitext(&#39;/path/to/file.txt&#39;))</code></p>
+<p>7.对文件重命名:<br><code>os.rename(&#39;test.txt&#39;, &#39;test.py&#39;)</code></p>
+<p>8.删掉文件:<br> <code>os.remove(&#39;test.py&#39;)</code></p>
+<p>9.要列出当前目 录下的所有目录:<br><code>[x for x in os.listdir(&#39;.&#39;) if os.path.isdir(x)]</code></p>
+<p>10.要列出所有的 .py 文件:<br><code>[x for x in os.listdir(&#39;.&#39;) if os.path.isfile(x) and  os.path.splitext(x)[1]==&#39;.py&#39;]</code></p>
+<p><img src="http://i.imgur.com/yGo3Oj3.png" alt=""></p>
 
       
 
