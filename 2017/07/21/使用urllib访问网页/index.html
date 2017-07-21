@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用urllib访问网页 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码123456import urllib.requestresponse = urllib.request.urlopen(&quot;http://www.fishc.com&quot;)   #打开网页html = response.read()     #读取URL信息">
+  <meta name="description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用urllib访问网页">
 <meta property="og:url" content="http://yoursite.com/2017/07/21/使用urllib访问网页/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码123456import urllib.requestresponse = urllib.request.urlopen(&quot;http://www.fishc.com&quot;)   #打开网页html = response.read()     #读取URL信息">
+<meta property="og:description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码">
 <meta property="og:image" content="http://i.imgur.com/pMXSHjq.png">
 <meta property="og:image" content="http://i.imgur.com/WeQahKK.png">
-<meta property="og:updated_time" content="2017-07-21T02:39:28.713Z">
+<meta property="og:updated_time" content="2017-07-21T02:47:02.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用urllib访问网页">
-<meta name="twitter:description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码123456import urllib.requestresponse = urllib.request.urlopen(&quot;http://www.fishc.com&quot;)   #打开网页html = response.read()     #读取URL信息">
+<meta name="twitter:description" content="urllib.request是一个用于访问URL的Python模块，urlopen函数可以访问不同协议的URL。 一个简单的读取URL信息的代码">
 <meta name="twitter:image" content="http://i.imgur.com/pMXSHjq.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -183,8 +183,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><code>urllib.request</code>是一个用于访问URL的Python模块，<code>urlopen</code>函数可以访问不同协议的URL。</p>
-<h6 id="一个简单的读取URL信息的代码"><a href="#一个简单的读取URL信息的代码" class="headerlink" title="一个简单的读取URL信息的代码"></a>一个简单的读取URL信息的代码</h6><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line"></div><div class="line">response = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(<span class="string">"http://www.fishc.com"</span>)   #打开网页</div><div class="line"><span class="selector-tag">html</span> = response.read()     #读取URL信息   是二进制字符串</div><div class="line"><span class="selector-tag">html</span> = <span class="selector-tag">html</span>.decode(<span class="string">"utf-8"</span>)   #解码操作</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(html)</span></span></div></pre></td></tr></table></figure>
-<h6 id="下载一个图片并保存"><a href="#下载一个图片并保存" class="headerlink" title="下载一个图片并保存"></a>下载一个图片并保存</h6><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line"></div><div class="line">response = urllib.request.urlopen(<span class="string">'https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=2991169923,1001222125&amp;fm=202'</span>)</div><div class="line">aa = response.<span class="built_in">read</span>()</div><div class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'ss.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">    f.<span class="built_in">write</span>(aa)</div></pre></td></tr></table></figure>
+<h5 id="一个简单的读取URL信息的代码"><a href="#一个简单的读取URL信息的代码" class="headerlink" title="一个简单的读取URL信息的代码"></a>一个简单的读取URL信息的代码</h5><a id="more"></a>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line"></div><div class="line">response = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(<span class="string">"http://www.fishc.com"</span>)   #打开网页</div><div class="line"><span class="selector-tag">html</span> = response.read()     #读取URL信息   是二进制字符串</div><div class="line"><span class="selector-tag">html</span> = <span class="selector-tag">html</span>.decode(<span class="string">"utf-8"</span>)   #解码操作</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(html)</span></span></div></pre></td></tr></table></figure>
+<h5 id="下载一个图片并保存"><a href="#下载一个图片并保存" class="headerlink" title="下载一个图片并保存"></a>下载一个图片并保存</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line"></div><div class="line">response = urllib.request.urlopen(<span class="string">'https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=2991169923,1001222125&amp;fm=202'</span>)</div><div class="line">aa = response.<span class="built_in">read</span>()</div><div class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'ss.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">    f.<span class="built_in">write</span>(aa)</div></pre></td></tr></table></figure>
 <p><img src="http://i.imgur.com/pMXSHjq.png" alt=""><br><code>response.geturl()</code>    是获取图片地址信息的<br><code>response.info()</code>    是http manage对象<br><code>print(response.info())</code>    打印对象<br><code>response.getcode()</code>   获取对象状态</p>
 <h5 id="利用有道词典来翻译文本："><a href="#利用有道词典来翻译文本：" class="headerlink" title="利用有道词典来翻译文本："></a>利用有道词典来翻译文本：</h5><p>Get是向服务器索取数据的一种请求，而Post是向服务器提交数据的一种请求。</p>
 <p>隐藏访问用<code>header</code></p>
@@ -285,6 +286,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/07/21/一个简单的爬虫抓取图片程序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一个简单的爬虫抓取图片程序
+        
+      </div>
+    </a>
   
   
     <a href="/2017/07/15/文件IO/" id="article-nav-older" class="article-nav-link-wrap">
