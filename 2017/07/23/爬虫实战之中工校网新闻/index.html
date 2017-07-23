@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>爬虫实战之中工校网新闻 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="以下的小程序是爬取中工校网标题：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫实战之中工校网新闻">
+<meta property="og:url" content="http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以下的小程序是爬取中工校网标题：">
+<meta property="og:updated_time" content="2017-07-23T06:04:13.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="爬虫实战之中工校网新闻">
+<meta name="twitter:description" content="以下的小程序是爬取中工校网标题：">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,16 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-爬虫实战之中工校网新闻" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-爬虫实战之中工校网新闻" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/23/爬虫实战之中工校网新闻/">爬虫实战之中工校网新闻</a>
+    <h1 class="article-title" itemprop="name">
+      爬虫实战之中工校网新闻
     </h1>
   
 
@@ -177,63 +179,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以下的小程序是爬取中工校网标题：<br>
-        
-          <a class="article-more-a" href="/2017/07/23/爬虫实战之中工校网新闻/#more">更多 >></a>
-        
+        <p>以下的小程序是爬取中工校网标题：<br><a id="more"></a><br>首先，通过分析中工校网新闻的URL发现，<code>http://www.zzti.edu.cn/info/1041/19593.htm</code>最后的19593控制这页数。然后，构建URL，获取想要的新闻信息<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line">import urllib<span class="selector-class">.error</span></div><div class="line">import re</div><div class="line">import <span class="selector-tag">time</span></div><div class="line"></div><div class="line">while True:</div><div class="line">    page = input(<span class="string">'请输入要寻找的新闻页数（小于19596）输入‘q’退出：'</span>)</div><div class="line">    <span class="keyword">if</span> page == <span class="string">'q'</span>:</div><div class="line">        break</div><div class="line"></div><div class="line">    url = <span class="string">'http://www.zzti.edu.cn/info/1041/'</span> + str(page) + <span class="string">'.htm'</span></div><div class="line"></div><div class="line">    try:</div><div class="line">        req = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(url)</div><div class="line">        <span class="selector-tag">html</span> = req.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">        pattern = re.compile(<span class="string">'&lt;td class="titles.*?&gt;(.*?)&lt;/td&gt;.*?&lt;div id="vsb_content_500"&gt;(.*?)&lt;/div&gt;.*?&lt;/div&gt;.*?&lt;/td&gt;'</span>, re.S)</div><div class="line">        items = re.findall(pattern, html)</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">            print (item[<span class="number">0</span>], item[<span class="number">1</span>])</div><div class="line"></div><div class="line">    except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">            print(e.code)</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">            print(e.reason)</div><div class="line"></div><div class="line">    <span class="selector-tag">time</span>.sleep(<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/23/爬虫实战之中工校网新闻/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-爬虫实战一之糗事百科" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/23/爬虫实战一之糗事百科/">爬虫实战一之糗事百科</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/23/爬虫实战一之糗事百科/" class="archive-article-date">
-  	<time datetime="2017-07-23T05:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>目标：<br>（1）抓取糗事百科热门段子<br>（2）过滤带有图片的段子<br>（3）实现显示一个段子的发布时间，发布人，段子内容，点赞数<br>
-        
-          <a class="article-more-a" href="/2017/07/23/爬虫实战一之糗事百科/#more">更多 >></a>
-        
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢啦~~~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -242,430 +212,125 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/23/爬虫实战一之糗事百科/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/21/正则表达式/">正则表达式</a>
-    </h1>
   
-
-        
-        <a href="/2017/07/21/正则表达式/" class="archive-article-date">
-  	<time datetime="2017-07-21T05:55:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式通常被用来检索、替换那些匹配某个模式的文本。<br><code>正则表达式困难的不是匹配到想要的内容，而是尽可能的不匹配到不想要的内容</code><br>
-        
-          <a class="article-more-a" href="/2017/07/21/正则表达式/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/21/正则表达式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2017/07/23/爬虫实战一之糗事百科/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">爬虫实战一之糗事百科</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-一个简单的爬虫抓取图片程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/21/一个简单的爬虫抓取图片程序/">一个简单的爬虫抓取图片程序</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/21/一个简单的爬虫抓取图片程序/" class="archive-article-date">
-  	<time datetime="2017-07-21T02:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个简单的爬虫抓取图片小程序，能够快速获取大量图片，并将图片保存至指定文件夹，省去了一个一个下载图片的麻烦。<br>
-        
-          <a class="article-more-a" href="/2017/07/21/一个简单的爬虫抓取图片程序/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/21/一个简单的爬虫抓取图片程序/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-使用urllib访问网页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/21/使用urllib访问网页/">使用urllib访问网页</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/21/使用urllib访问网页/" class="archive-article-date">
-  	<time datetime="2017-07-21T01:55:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>urllib.request</code>是一个用于访问URL的Python模块，<code>urlopen</code>函数可以访问不同协议的URL。</p>
-<h5 id="一个简单的读取URL信息的代码"><a href="#一个简单的读取URL信息的代码" class="headerlink" title="一个简单的读取URL信息的代码"></a>一个简单的读取URL信息的代码</h5>
-        
-          <a class="article-more-a" href="/2017/07/21/使用urllib访问网页/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/21/使用urllib访问网页/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-文件IO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/文件IO/">文件IO</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/15/文件IO/" class="archive-article-date">
-  	<time datetime="2017-07-15T06:32:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>文本文件：</strong><br>打开文件：<br>
-        
-          <a class="article-more-a" href="/2017/07/15/文件IO/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/15/文件IO/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-端口扫描" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/13/端口扫描/">端口扫描</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/13/端口扫描/" class="archive-article-date">
-  	<time datetime="2017-07-13T06:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="简单的端口扫描器代码："><a href="#简单的端口扫描器代码：" class="headerlink" title="简单的端口扫描器代码："></a>简单的端口扫描器代码：</h5>
-        
-          <a class="article-more-a" href="/2017/07/13/端口扫描/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/13/端口扫描/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-python中的模块" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/12/python中的模块/">python中的模块</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/12/python中的模块/" class="archive-article-date">
-  	<time datetime="2017-07-12T07:43:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<p>什么是模块，模块应该如何使用，见连接：<a href="http://www.cnblogs.com/dolphin0520/archive/2013/03/19/2969152.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/archive/2013/03/19/2969152.html</a></p>
-<p><code>from math import *</code>是一次性引入math中所有的东西。</p>
-<p>后续学到模块的新东西再继续添加</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/12/python中的模块/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Python-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/Python-多线程/">Python 多线程</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/11/Python-多线程/" class="archive-article-date">
-  	<time datetime="2017-07-11T05:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  通过看<a href="http://www.cnblogs.com/fnng/p/3670789.html" target="_blank" rel="external">博客</a>才明白什么是单线程和多线程，它们又是如何实现的等等问题，感觉这篇文章写的特别通俗易懂，记录一下。不过作者在文章中间出现了一些问题<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="variable">__name__</span> == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">for</span> t <span class="built_in">in</span> threads:</div><div class="line">        t.setDaemon(<span class="literal">True</span>)</div><div class="line">        t.start()</div><div class="line">    t.<span class="built_in">join</span>()</div><div class="line">print <span class="string">"all over %s"</span> %ctime()</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/07/11/Python-多线程/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/11/Python-多线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-python-strip-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/python-strip-函数/">python strip()函数 以及 yield</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/09/python-strip-函数/" class="archive-article-date">
-  	<time datetime="2017-07-09T09:37:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="python-strip-函数"><a href="#python-strip-函数" class="headerlink" title="python strip()函数"></a>python strip()函数</h3><p>声明：s为字符串，rm为要删除的字符序列</p>
-<p>s.strip(rm)     删除s字符串中开头、结尾处，位于 rm删除序列的字符</p>
-<p>s.lstrip(rm)    删除s字符串中开头处，位于 rm删除序列的字符<br>
-        
-          <a class="article-more-a" href="/2017/07/09/python-strip-函数/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/python-strip-函数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="爬虫实战之中工校网新闻" data-title="爬虫实战之中工校网新闻" data-url="http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/", 
+    sourceId: "爬虫实战之中工校网新闻",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+  <div id="SOHUCS" sid="爬虫实战之中工校网新闻" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "true"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
   
 
 
@@ -688,8 +353,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
