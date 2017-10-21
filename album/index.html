@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>端口扫描 | sweet</title>
+  <title>sweet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单的端口扫描器代码：">
-<meta name="keywords" content="python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="端口扫描">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/端口扫描/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="sweet">
+<meta property="og:url" content="http://yoursite.com/album/index.html">
 <meta property="og:site_name" content="sweet">
-<meta property="og:description" content="简单的端口扫描器代码：">
-<meta property="og:updated_time" content="2017-10-21T11:01:05.271Z">
+<meta property="og:updated_time" content="2017-10-21T11:51:47.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="端口扫描">
-<meta name="twitter:description" content="简单的端口扫描器代码：">
+<meta name="twitter:title" content="sweet">
   
     <link rel="alternative" href="/atom.xml" title="sweet" type="application/atom+xml">
   
@@ -162,38 +158,12 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-端口扫描" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      端口扫描
-    </h1>
-  
-
-        
-        <a href="/2017/07/13/端口扫描/" class="archive-article-date">
-  	<time datetime="2017-07-13T06:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="简单的端口扫描器代码："><a href="#简单的端口扫描器代码：" class="headerlink" title="简单的端口扫描器代码："></a>简单的端口扫描器代码：</h5><a id="more"></a>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="built_in">import</span> sys</div><div class="line">from socket <span class="built_in">import</span> *</div><div class="line"><span class="attr">host</span> = sys.argv[<span class="number">1</span>]                   <span class="comment">#读取端口及目标服务器</span></div><div class="line"><span class="attr">ports</span> = sys.argv[<span class="number">2</span>].split('-')</div><div class="line"></div><div class="line"><span class="attr">start_port</span> = int(ports[<span class="number">0</span>])           <span class="comment">#传递端口的范围</span></div><div class="line"><span class="attr">end_port</span> = int(ports[<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="attr">target_ip</span> = gethostbyname(host)      <span class="comment">#传递目标IP地址</span></div><div class="line"><span class="attr">opened_ports</span> = []</div><div class="line">                                         <span class="comment">#测试TCP端口连接</span></div><div class="line">for port <span class="keyword">in</span> range(start_port, end_port):      </div><div class="line">    <span class="attr">sock</span> = socket(AF_INET, SOCK_STREAM)    <span class="comment">#IPv4,TCP连接</span></div><div class="line">    sock.settimeout(<span class="number">10</span>)</div><div class="line">    <span class="attr">result</span> = sock.connec_ex(target_ip, port)</div><div class="line">    <span class="keyword">if</span> <span class="attr">result</span> == <span class="number">0</span>:</div><div class="line">        opened_ports.append(port)</div><div class="line"></div><div class="line">print('Opened poers:')</div><div class="line"></div><div class="line">for i <span class="keyword">in</span> opened_ports:     <span class="comment">#输出端口开放结果</span></div><div class="line">    print(i)</div></pre></td></tr></table></figure>
-<p> 然后用命令行的方式进行传参<code>python wsw.py 127.0.0.1 100-200</code><br>先用命令行进入wsw.py文件所在的文件，再执行上方代码。</p>
-<p> <code>AF_INET</code>（又称 PF_INET）是 IPv4 网络协议的套接字类型，AF_INET6则是IPv6 的；而 AF_UNIX 则是 Unix 系统本地通信。<br>选择 AF_INET 的目的就是使用 IPv4 进行通信。因为 IPv4 使用 32 位地址，相比IPv6 的 128 位来说，计算更快，便于用于局域网通信。而且 AF_INET 相比 AF_UNIX 更具通用性，因为 Windows 上有 AF_INET 而没有 AF_UNIX。</p>
-<p><code>SOCK_STREAM</code>：TCP是连接的，提供序列化的，可靠的，双向连接的字节流。支持带外数据传输</p>
-<h5 id="多线程端口扫描代码："><a href="#多线程端口扫描代码：" class="headerlink" title="多线程端口扫描代码："></a>多线程端口扫描代码：</h5><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="built_in">import</span> sys</div><div class="line"><span class="built_in">import</span> threading</div><div class="line">from socket <span class="built_in">import</span> *</div><div class="line">print('dsjfhdj')</div><div class="line">def tcp_test(port):</div><div class="line">    <span class="attr">sock</span> = socket(AF_INET, SOCK_STREAM)</div><div class="line">    sock.settimeout(<span class="number">10</span>)</div><div class="line">    <span class="attr">result</span> = sock.connect_ex((target_ip, port))</div><div class="line">    <span class="keyword">if</span> <span class="attr">result</span> == <span class="number">0</span>:</div><div class="line">        lock.acquire()          <span class="comment">#加锁</span></div><div class="line">        print(<span class="string">"Opened Port:"</span>,port)</div><div class="line">        lock.release()          <span class="comment">#释放锁</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="attr">__name__=='__main__':</span></div><div class="line">    <span class="attr">host</span> = sys.argv[<span class="number">1</span>]</div><div class="line">    <span class="attr">portstrs</span> = sys.argv[<span class="number">2</span>].split('-')</div><div class="line"></div><div class="line">    <span class="attr">start_port</span> = int(portstrs[<span class="number">0</span>])</div><div class="line">    <span class="attr">end_port</span> = int(portstrs[<span class="number">1</span>])</div><div class="line"></div><div class="line">    <span class="attr">target_ip</span> = gethostbyname(host)</div><div class="line">    <span class="attr">lock</span> = threading.Lock()</div><div class="line"></div><div class="line">    for port <span class="keyword">in</span> range(start_port, end_port):</div><div class="line">        threading.Thread(<span class="attr">target</span> = tcp_test, <span class="attr">args</span> = (port,))</div></pre></td></tr></table></figure>
-<p><code>ading.Thread(target = tcp_test, args = (port,))</code> 用来创建一个线程，该函数的第一个参数是一个线程中执行的函数，第二个参数必须是个元组，作为函数的输入，由于 tcp_test 函数只有一个参数，所以我们使用(port,)这种形式表示这个参数为元组。</p>
-<p>实现TCP测试函数，需要注意print输出时候需要<code>加锁</code>，如果不加锁可能会出现多个输出混合在一起的错误状态，而锁需要在程序启动时创建，从而能让新建的线程共享这个锁， 注意当输出执行完后要<code>释放锁lock</code>。</p>
-<p>端口扫描： <a href="http://www.yukaige.com/?p=160" target="_blank" rel="external">http://www.yukaige.com/?p=160</a></p>
-<h5 id="创建服务端和客户端："><a href="#创建服务端和客户端：" class="headerlink" title="创建服务端和客户端："></a>创建服务端和客户端：</h5><p>代码详解：<br><a href="http://www.cnblogs.com/kellyseeme/p/5525026.html" target="_blank" rel="external">http://www.cnblogs.com/kellyseeme/p/5525026.html</a></p>
-<p>python socket编程详细介绍：<br><a href="http://blog.csdn.net/rebelqsp/article/details/22109925" target="_blank" rel="external">http://blog.csdn.net/rebelqsp/article/details/22109925</a></p>
-
+        
       
 
       
@@ -222,17 +192,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -283,7 +242,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/13/端口扫描/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/album/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,25 +254,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2017/07/15/文件IO/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          文件IO
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/12/python中的模块/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python中的模块</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 
 
@@ -321,7 +261,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="端口扫描" data-title="端口扫描" data-url="http://yoursite.com/2017/07/13/端口扫描/"></div>
+	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/album/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -344,8 +284,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2017/07/13/端口扫描/", 
-    sourceId: "端口扫描",
+    url: "http://yoursite.com/album/index.html", 
+    sourceId: "undefined",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -354,7 +294,7 @@
   
 
   
-  <div id="SOHUCS" sid="端口扫描" ></div> 
+  <div id="SOHUCS" sid="undefined" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 
@@ -387,7 +327,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
