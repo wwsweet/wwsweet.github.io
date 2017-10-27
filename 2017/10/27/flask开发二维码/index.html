@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="以下的小程序是爬取中工校网标题：">
-<meta name="keywords" content="爬虫">
+<meta name="description" content="图像处理主要依赖于qrcode库和PILpython-qrcode是个用来生成二维码图片的第三方模块，依赖于 PIL 模块。在实现的过程中一直出现路径错误，最后将保存的路径写完整后才正确，才能在页面显示。img.save(&amp;#39;E:/python/kaifa/static/333.png&amp;#39;)">
+<meta name="keywords" content="flask开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爬虫实战之中工校网新闻">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/index.html">
+<meta property="og:title" content="flask开发二维码">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/flask开发二维码/index.html">
 <meta property="og:site_name" content="sweet">
-<meta property="og:description" content="以下的小程序是爬取中工校网标题：">
-<meta property="og:updated_time" content="2017-10-21T11:00:47.152Z">
+<meta property="og:description" content="图像处理主要依赖于qrcode库和PILpython-qrcode是个用来生成二维码图片的第三方模块，依赖于 PIL 模块。在实现的过程中一直出现路径错误，最后将保存的路径写完整后才正确，才能在页面显示。img.save(&amp;#39;E:/python/kaifa/static/333.png&amp;#39;)">
+<meta property="og:image" content="https://i.imgur.com/1faNNvL.png">
+<meta property="og:image" content="https://i.imgur.com/iqSYUtH.png">
+<meta property="og:updated_time" content="2017-10-27T06:18:57.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爬虫实战之中工校网新闻">
-<meta name="twitter:description" content="以下的小程序是爬取中工校网标题：">
+<meta name="twitter:title" content="flask开发二维码">
+<meta name="twitter:description" content="图像处理主要依赖于qrcode库和PILpython-qrcode是个用来生成二维码图片的第三方模块，依赖于 PIL 模块。在实现的过程中一直出现路径错误，最后将保存的路径写完整后才正确，才能在页面显示。img.save(&amp;#39;E:/python/kaifa/static/333.png&amp;#39;)">
+<meta name="twitter:image" content="https://i.imgur.com/1faNNvL.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>爬虫实战之中工校网新闻 | sweet</title>
+<title>flask开发二维码 | sweet</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -274,11 +277,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-爬虫实战之中工校网新闻" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-flask开发二维码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/07/23/爬虫实战之中工校网新闻/" class="article-date">
-      <time datetime="2017-07-23T05:55:11.000Z" itemprop="datePublished">2017-07-23</time>
+      <a href="/2017/10/27/flask开发二维码/" class="article-date">
+      <time datetime="2017-10-27T06:00:44.000Z" itemprop="datePublished">2017-10-27</time>
 </a>
 
 
@@ -293,7 +296,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      爬虫实战之中工校网新闻
+      flask开发二维码
     </h1>
   
 
@@ -304,7 +307,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask开发/">flask开发</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -314,10 +317,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>以下的小程序是爬取中工校网标题：<br><a id="more"></a><br>首先，通过分析中工校网新闻的URL发现，<code>http://www.zzti.edu.cn/info/1041/19593.htm</code>最后的19593控制这页数。然后，构建URL，获取想要的新闻信息<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line">import urllib<span class="selector-class">.error</span></div><div class="line">import re</div><div class="line">import <span class="selector-tag">time</span></div><div class="line"></div><div class="line">while True:</div><div class="line">    page = input(<span class="string">'请输入要寻找的新闻页数（小于19596）输入‘q’退出：'</span>)</div><div class="line">    <span class="keyword">if</span> page == <span class="string">'q'</span>:</div><div class="line">        break</div><div class="line"></div><div class="line">    url = <span class="string">'http://www.zzti.edu.cn/info/1041/'</span> + str(page) + <span class="string">'.htm'</span></div><div class="line"></div><div class="line">    try:</div><div class="line">        req = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(url)</div><div class="line">        <span class="selector-tag">html</span> = req.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">        pattern = re.compile(<span class="string">'&lt;td class="titles.*?&gt;(.*?)&lt;/td&gt;.*?&lt;div id="vsb_content_500"&gt;(.*?)&lt;/div&gt;.*?&lt;/div&gt;.*?&lt;/td&gt;'</span>, re.S)</div><div class="line">        items = re.findall(pattern, html)</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">            print (item[<span class="number">0</span>], item[<span class="number">1</span>])</div><div class="line"></div><div class="line">    except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">            print(e.code)</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">            print(e.reason)</div><div class="line"></div><div class="line">    <span class="selector-tag">time</span>.sleep(<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
-<p><code>items = re.findall(pattern, html)</code> == <code>items = pattern.findall(html)</code></p>
-<p>正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
-<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
+        <p>图像处理主要依赖于qrcode库和PIL<br>python-qrcode是个用来生成二维码图片的第三方模块，依赖于 PIL 模块。<br>在实现的过程中一直出现路径错误，最后将保存的路径写完整后才正确，才能在页面显示。<code>img.save(&#39;E:/python/kaifa/static/333.png&#39;)</code><br><a id="more"></a></p>
+<h5 id="一、主要的源代码："><a href="#一、主要的源代码：" class="headerlink" title="一、主要的源代码："></a>一、主要的源代码：</h5><p>kaifa.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,render_template,redirect,url_for,request</div><div class="line"><span class="keyword">import</span> qrcode</div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image    <span class="comment">#图像处理模块</span></div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line"><span class="meta">@app.route('/')</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'url'</span>))<span class="comment">#实现跳转，返回重定向</span></div><div class="line"></div><div class="line"><span class="meta">@app.route('/url',methods=['GET','POST'])</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">url</span><span class="params">()</span>:</span>                                         <span class="comment">#默认请求方式为gets</span></div><div class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:                  <span class="comment">#request包含所有的数据和头信息</span></div><div class="line">        <span class="keyword">return</span> render_template(<span class="string">'url.html'</span>)             <span class="comment">#如果请求方式为post，接下来就要获取用户输入的url</span></div><div class="line"></div><div class="line">    url = request.form[<span class="string">'url'</span>]</div><div class="line">    img = qrcode.make(url)  <span class="comment"># 生成二维码图片对象</span></div><div class="line">    img.save(<span class="string">'E:/python/kaifa/static/2.png'</span>)</div><div class="line">    <span class="keyword">return</span> render_template(<span class="string">'img.html'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app.run(debug=<span class="keyword">True</span>)</div></pre></td></tr></table></figure></p>
+<h5 id="二、url-html文件源码："><a href="#二、url-html文件源码：" class="headerlink" title="二、url.html文件源码："></a>二、url.html文件源码：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>通过url生成二维码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/url"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">        url:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"http://"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"生成二维码"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="三、img-html源码："><a href="#三、img-html源码：" class="headerlink" title="三、img.html源码："></a>三、img.html源码：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>返回生成的二维码图片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/static/333.png"</span> &gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="四、在本次实现需要注意的地方："><a href="#四、在本次实现需要注意的地方：" class="headerlink" title="四、在本次实现需要注意的地方："></a>四、在本次实现需要注意的地方：</h5><p><img src="https://i.imgur.com/1faNNvL.png" alt=""></p>
+<p>url_for()是找一个名叫url的路由函数，而不是去装饰器里找路由地址。所以<code>/urls</code>并不影响。<br><img src="https://i.imgur.com/iqSYUtH.png" alt=""><br>图中如果没有name参数，那么将获取不到用户输入的url，在与后端进行交互的时候只会识别name参数</p>
 
       
     </div>
@@ -326,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/23/爬虫实战之中工校网新闻/">爬虫实战之中工校网新闻</a></p>
+        <p><span>本文标题:</span><a href="/2017/10/27/flask开发二维码/">flask开发二维码</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">sweet</a></p>
-        <p><span>发布时间:</span>2017-07-23, 13:55:11</p>
-        <p><span>最后更新:</span>2017-10-21, 19:00:47</p>
+        <p><span>发布时间:</span>2017-10-27, 14:00:44</p>
+        <p><span>最后更新:</span>2017-10-27, 14:18:57</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/23/爬虫实战之中工校网新闻/" title="爬虫实战之中工校网新闻">http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/　　作者: sweet" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/27/flask开发二维码/" title="flask开发二维码">http://yoursite.com/2017/10/27/flask开发二维码/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/10/27/flask开发二维码/　　作者: sweet" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -344,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/10/21/数据库的增改查删/">
-                    数据库的增改查删
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/07/23/爬虫实战一之糗事百科/">
-                    爬虫实战一之糗事百科
+                <a href="/2017/10/22/装饰器/">
+                    装饰器
                 </a>
             </div>
         
@@ -365,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、主要的源代码："><span class="toc-number">1.</span> <span class="toc-text">一、主要的源代码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、url-html文件源码："><span class="toc-number">2.</span> <span class="toc-text">二、url.html文件源码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、img-html源码："><span class="toc-number">3.</span> <span class="toc-text">三、img.html源码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、在本次实现需要注意的地方："><span class="toc-number">4.</span> <span class="toc-text">四、在本次实现需要注意的地方：</span></a></li></ol>
         
     </div>
     <style>
@@ -401,7 +400,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"爬虫实战之中工校网新闻　| sweet　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"flask开发二维码　| sweet　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -435,15 +434,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/10/21/数据库的增改查删/" title="上一篇: 数据库的增改查删">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/07/23/爬虫实战一之糗事百科/" title="下一篇: 爬虫实战一之糗事百科">
+            <a href="/2017/10/22/装饰器/" title="下一篇: 装饰器">
                 <i class="fa fa-angle-right"></i>
             </a>
         

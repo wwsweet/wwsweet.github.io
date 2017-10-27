@@ -15,17 +15,12 @@
 
 
 
-<meta name="description" content="以下的小程序是爬取中工校网标题：">
-<meta name="keywords" content="爬虫">
-<meta property="og:type" content="article">
-<meta property="og:title" content="爬虫实战之中工校网新闻">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="sweet">
+<meta property="og:url" content="http://yoursite.com/archives/2017/page/3/index.html">
 <meta property="og:site_name" content="sweet">
-<meta property="og:description" content="以下的小程序是爬取中工校网标题：">
-<meta property="og:updated_time" content="2017-10-21T11:00:47.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爬虫实战之中工校网新闻">
-<meta name="twitter:description" content="以下的小程序是爬取中工校网标题：">
+<meta name="twitter:title" content="sweet">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +52,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>爬虫实战之中工校网新闻 | sweet</title>
+<title>Archives: 2017 | sweet</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,8 +62,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -274,189 +269,56 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-爬虫实战之中工校网新闻" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/07/23/爬虫实战之中工校网新闻/" class="article-date">
-      <time datetime="2017-07-23T05:55:11.000Z" itemprop="datePublished">2017-07-23</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/07/09/python的典型实例/" class="archive-article-date">
+      <time datetime="2017-07-09T09:03:52.023Z" itemprop="datePublished">07-09</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      爬虫实战之中工校网新闻
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/09/python的典型实例/">python的典型实例</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>以下的小程序是爬取中工校网标题：<br><a id="more"></a><br>首先，通过分析中工校网新闻的URL发现，<code>http://www.zzti.edu.cn/info/1041/19593.htm</code>最后的19593控制这页数。然后，构建URL，获取想要的新闻信息<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line">import urllib<span class="selector-class">.error</span></div><div class="line">import re</div><div class="line">import <span class="selector-tag">time</span></div><div class="line"></div><div class="line">while True:</div><div class="line">    page = input(<span class="string">'请输入要寻找的新闻页数（小于19596）输入‘q’退出：'</span>)</div><div class="line">    <span class="keyword">if</span> page == <span class="string">'q'</span>:</div><div class="line">        break</div><div class="line"></div><div class="line">    url = <span class="string">'http://www.zzti.edu.cn/info/1041/'</span> + str(page) + <span class="string">'.htm'</span></div><div class="line"></div><div class="line">    try:</div><div class="line">        req = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(url)</div><div class="line">        <span class="selector-tag">html</span> = req.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">        pattern = re.compile(<span class="string">'&lt;td class="titles.*?&gt;(.*?)&lt;/td&gt;.*?&lt;div id="vsb_content_500"&gt;(.*?)&lt;/div&gt;.*?&lt;/div&gt;.*?&lt;/td&gt;'</span>, re.S)</div><div class="line">        items = re.findall(pattern, html)</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">            print (item[<span class="number">0</span>], item[<span class="number">1</span>])</div><div class="line"></div><div class="line">    except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">            print(e.code)</div><div class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">            print(e.reason)</div><div class="line"></div><div class="line">    <span class="selector-tag">time</span>.sleep(<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
-<p><code>items = re.findall(pattern, html)</code> == <code>items = pattern.findall(html)</code></p>
-<p>正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
-<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/23/爬虫实战之中工校网新闻/">爬虫实战之中工校网新闻</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">sweet</a></p>
-        <p><span>发布时间:</span>2017-07-23, 13:55:11</p>
-        <p><span>最后更新:</span>2017-10-21, 19:00:47</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/23/爬虫实战之中工校网新闻/" title="爬虫实战之中工校网新闻">http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/23/爬虫实战之中工校网新闻/　　作者: sweet" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/10/21/数据库的增改查删/">
-                    数据库的增改查删
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/07/23/爬虫实战一之糗事百科/">
-                    爬虫实战一之糗事百科
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+          
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"爬虫实战之中工校网新闻　| sweet　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
-</div>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2017/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 
-
-
-
-
-
-
-    
-        <section class="youyan" id="comments">
-    <script>
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2147360';
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-    
-    <script> loadComment(); </script>
-
-    <div id="uyan_frame"></div>
-</section>
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/10/21/数据库的增改查删/" title="上一篇: 数据库的增改查删">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/07/23/爬虫实战一之糗事百科/" title="下一篇: 爬虫实战一之糗事百科">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/27/flask开发二维码/">flask开发二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/22/装饰器/">装饰器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/22/flask代码知识点/">flask代码知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/22/请求与响应/">请求与响应</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/22/挖掘高校子域名/">挖掘高校子域名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/21/pip-install-安装出错解决办法/">pip install 安装出错解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/21/我的第一篇博客/">我的第一篇博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/21/数据库的增改查删/">数据库的增改查删</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/23/爬虫实战之中工校网新闻/">爬虫实战之中工校网新闻</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/23/爬虫实战一之糗事百科/">爬虫实战一之糗事百科</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/一个简单的爬虫抓取图片程序/">一个简单的爬虫抓取图片程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/使用urllib访问网页/">使用urllib访问网页</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/15/文件IO/">文件IO</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/端口扫描/">端口扫描</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/python中的模块/">python中的模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/11/Python-多线程/">Python 多线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/python-strip-函数/">python strip()函数 以及 yield</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/python-自学笔记/">python 自学笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/lambda表达式学习/">python中lambda表达式学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/python的典型实例/">python的典型实例</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
