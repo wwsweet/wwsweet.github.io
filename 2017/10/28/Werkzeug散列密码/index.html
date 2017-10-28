@@ -15,17 +15,19 @@
 
 
 
-<meta name="description" content="目标：（1）抓取糗事百科热门段子（2）过滤带有图片的段子（3）实现显示一个段子的发布时间，发布人，段子内容，点赞数">
-<meta name="keywords" content="爬虫">
+<meta name="description" content="数据库中直接存放明文密码是很危险的,Werkzeug库中的security能够方便的实现散列密码的计算security库中 generate_password_hash(password,method…)函数将原始密码作为输入,以字符串形式输出密码的散列值check_password_hash(hash,password)函数检查给出的hash密码与明文密码是否相符 应用在用户模型中：123456">
+<meta name="keywords" content="flask开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爬虫实战一之糗事百科">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/爬虫实战一之糗事百科/index.html">
+<meta property="og:title" content="Werkzeug散列密码">
+<meta property="og:url" content="http://yoursite.com/2017/10/28/Werkzeug散列密码/index.html">
 <meta property="og:site_name" content="sweet">
-<meta property="og:description" content="目标：（1）抓取糗事百科热门段子（2）过滤带有图片的段子（3）实现显示一个段子的发布时间，发布人，段子内容，点赞数">
-<meta property="og:updated_time" content="2017-10-21T11:00:55.632Z">
+<meta property="og:description" content="数据库中直接存放明文密码是很危险的,Werkzeug库中的security能够方便的实现散列密码的计算security库中 generate_password_hash(password,method…)函数将原始密码作为输入,以字符串形式输出密码的散列值check_password_hash(hash,password)函数检查给出的hash密码与明文密码是否相符 应用在用户模型中：123456">
+<meta property="og:image" content="https://i.imgur.com/4mQ2jrk.png">
+<meta property="og:updated_time" content="2017-10-28T12:18:49.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爬虫实战一之糗事百科">
-<meta name="twitter:description" content="目标：（1）抓取糗事百科热门段子（2）过滤带有图片的段子（3）实现显示一个段子的发布时间，发布人，段子内容，点赞数">
+<meta name="twitter:title" content="Werkzeug散列密码">
+<meta name="twitter:description" content="数据库中直接存放明文密码是很危险的,Werkzeug库中的security能够方便的实现散列密码的计算security库中 generate_password_hash(password,method…)函数将原始密码作为输入,以字符串形式输出密码的散列值check_password_hash(hash,password)函数检查给出的hash密码与明文密码是否相符 应用在用户模型中：123456">
+<meta name="twitter:image" content="https://i.imgur.com/4mQ2jrk.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>爬虫实战一之糗事百科 | sweet</title>
+<title>Werkzeug散列密码 | sweet</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -274,11 +276,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-爬虫实战一之糗事百科" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Werkzeug散列密码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/07/23/爬虫实战一之糗事百科/" class="article-date">
-      <time datetime="2017-07-23T05:54:17.000Z" itemprop="datePublished">2017-07-23</time>
+      <a href="/2017/10/28/Werkzeug散列密码/" class="article-date">
+      <time datetime="2017-10-28T12:12:12.000Z" itemprop="datePublished">2017-10-28</time>
 </a>
 
 
@@ -293,7 +295,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      爬虫实战一之糗事百科
+      Werkzeug散列密码
     </h1>
   
 
@@ -304,7 +306,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask开发/">flask开发</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -314,16 +316,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<p>目标：<br>（1）抓取糗事百科热门段子<br>（2）过滤带有图片的段子<br>（3）实现显示一个段子的发布时间，发布人，段子内容，点赞数<br><a id="more"></a></p>
-<h5 id="确定URL并抓取页面代码："><a href="#确定URL并抓取页面代码：" class="headerlink" title="确定URL并抓取页面代码："></a>确定URL并抓取页面代码：</h5><p>先用最简单的代码来实现抓取看看能不能成功<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line">import urllib<span class="selector-class">.error</span></div><div class="line">import re</div><div class="line"></div><div class="line">page = <span class="number">2</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/8hr/page/'</span> + str(page) + <span class="string">'/?s=5002335'</span></div><div class="line"></div><div class="line">try:</div><div class="line">    request=urllib<span class="selector-class">.request</span><span class="selector-class">.Request</span>(url)</div><div class="line">    response=urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(request)</div><div class="line">    print(response.read())</div><div class="line">except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">        print(e.code)</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">        print(e.reason)</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>运行结果：<br>raise RemoteDisconnected(“Remote end closed connection without”<br>http.client.RemoteDisconnected: Remote end closed connection without response<br>结果分析：应该是headers验证的问题，加上一个headers验证试试看;<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import urllib<span class="selector-class">.request</span></div><div class="line">import urllib<span class="selector-class">.error</span></div><div class="line">import re</div><div class="line"></div><div class="line">page = <span class="number">2</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/8hr/page/'</span> + str(page) + <span class="string">'/?s=5002335'</span></div><div class="line"></div><div class="line">try:</div><div class="line">    req = urllib<span class="selector-class">.request</span><span class="selector-class">.Request</span>(url)</div><div class="line">    req.add_header(<span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'</span>)</div><div class="line">    response = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(req)</div><div class="line">    print(response.read())</div><div class="line">except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">        print(e.code)</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">        print(e.reason)</div></pre></td></tr></table></figure></p>
-<p>运行结果：打印出了第二页的HTML代码</p>
-<h5 id="提取某一页的所有段子：-并过滤图片代码）"><a href="#提取某一页的所有段子：-并过滤图片代码）" class="headerlink" title="提取某一页的所有段子：(并过滤图片代码）"></a>提取某一页的所有段子：(并过滤图片代码）</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line">import urllib.error</div><div class="line">import re</div><div class="line"></div><div class="line">page = <span class="number">2</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/8hr/page/'</span> + str(page) + <span class="string">'/?s=5002335'</span></div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    req = urllib.request.Request(url)</div><div class="line">    req.add_header(<span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'</span>)</div><div class="line">    response = urllib.request.urlopen(req)</div><div class="line">    content = response.<span class="built_in">read</span>().decode(<span class="string">'utf-8'</span>)</div><div class="line">    pattern = re.compile(<span class="string">'title=.*?&lt;h2&gt;(.*?)&lt;/h2&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;.*?&lt;/a&gt;(.*?)&lt;div class="stats"&gt;.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</div><div class="line">    <span class="keyword">items</span> = re.findall(pattern, content)</div><div class="line">    <span class="keyword">for</span> <span class="keyword">item</span> <span class="keyword">in</span> <span class="keyword">items</span>:</div><div class="line">        haveImg = re.search(<span class="string">'img'</span>,<span class="keyword">item</span>[<span class="number">2</span>])</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> haveImg:</div><div class="line">            print (<span class="keyword">item</span>[<span class="number">0</span>]+<span class="string">'\n'</span>+<span class="keyword">item</span> [<span class="number">1</span>]+<span class="string">'\n'</span>+<span class="keyword">item</span> [<span class="number">3</span>])</div><div class="line">   </div><div class="line">except urllib.error.URLError <span class="keyword">as</span> e:</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</div><div class="line">        print(e.code)</div><div class="line">    <span class="keyword">if</span> hasattr(e, <span class="string">'reason'</span>):</div><div class="line">        print(e.reason)</div></pre></td></tr></table></figure>
-<p>正则表达式分析：<br>（1）（.<em>?）代表一个分组，在这个正则表达式中，我匹配了三个分组，在后面的遍历item中，item[0]就代表第一个（.</em>?）代表的内容，以此类推。<br>（2）re.S表示在匹配时为点任意模式，点也可以表示换行符。</p>
-<p>我们可以发现，带有图片的段子会有类似img的代码，而不带图片的则没有，所以，我们的正则表达式的item[2]就是获取了图片的内容，如果不带图片，item[2]获取的内容就是空。</p>
-<p><a href="http://blog.csdn.net/finna_xu/article/details/68070662" target="_blank" rel="external">http://blog.csdn.net/finna_xu/article/details/68070662</a></p>
+        <p>数据库中直接存放明文密码是很危险的,Werkzeug库中的security能够方便的实现散列密码的计算<br>security库中 generate_password_hash(password,method…)函数将原始密码作为输入,以字符串形式输出密码的散列值<br>check_password_hash(hash,password)函数检查给出的hash密码与明文密码是否相符</p>
+<p>应用在用户模型中：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> werkzeug.security <span class="keyword">import</span> check_password_hash,generate_password_hash</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(db.Model)</span>:</span></div><div class="line">    id = db.Column(db.Integer, primary_key=<span class="keyword">True</span>)</div><div class="line">    username = db.Column(db.String(<span class="number">64</span>),unique=<span class="keyword">True</span>)</div><div class="line">    password_hash = db.Column(db.String(<span class="number">128</span>))</div><div class="line"></div><div class="line">    <span class="comment">#不能读取   </span></div><div class="line"><span class="meta">    @property</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">password</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> <span class="string">"you cant read it"</span></div><div class="line">    <span class="comment">#使用user.password='asda'设置时存入生成的散列密码   </span></div><div class="line"><span class="meta">    @password.setter</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">password</span><span class="params">(self, password)</span>:</span></div><div class="line">        self.password_hash = generate_password_hash(password)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_password_hash</span><span class="params">(self,password)</span>:</span></div><div class="line">        <span class="keyword">return</span> check_password_hash(self.password_hash, password)</div></pre></td></tr></table></figure></p>
+<p>需要验证密码时就只需调用User类的check_password_hash(self,password)方法,如果返回true则进行下一步操作</p>
+<p>计算密码散列值的函数通过名为 password 的只写属性实现。设定这个属性的值时，赋值方法会调用 Werkzeug 提供的generate_password_hash() 函数，并把得到的结果赋值给password_hash 字段。如果试图读取 password 属性的值，则会返回错误，原因很明显，因为生成散列值后就无法还原成原来的密码了。 verify<em>password 方 法 接 受 一 个 参 数（即密码），将其传给Werkzeug提供的check</em> password_hash()函数，和存储在 User 模型中的密码散列值进行比对。如果这个方法返回True ，就表明密码是正确的。<br><img src="https://i.imgur.com/4mQ2jrk.png" alt=""><br>从上图可以看出即使不同用户使用相同的密码，生成的密码散列值也完全不相同</p>
 
       
     </div>
@@ -332,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/07/23/爬虫实战一之糗事百科/">爬虫实战一之糗事百科</a></p>
+        <p><span>Title:</span><a href="/2017/10/28/Werkzeug散列密码/">Werkzeug散列密码</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">sweet</a></p>
-        <p><span>Created:</span>2017-07-23, 13:54:17</p>
-        <p><span>Updated:</span>2017-10-21, 19:00:55</p>
+        <p><span>Created:</span>2017-10-28, 20:12:12</p>
+        <p><span>Updated:</span>2017-10-28, 20:18:49</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/07/23/爬虫实战一之糗事百科/" title="爬虫实战一之糗事百科">http://yoursite.com/2017/07/23/爬虫实战一之糗事百科/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/07/23/爬虫实战一之糗事百科/　　By sweet" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/10/28/Werkzeug散列密码/" title="Werkzeug散列密码">http://yoursite.com/2017/10/28/Werkzeug散列密码/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/10/28/Werkzeug散列密码/　　By sweet" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -350,16 +346,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/07/23/爬虫实战之中工校网新闻/">
-                    爬虫实战之中工校网新闻
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/07/21/正则表达式/">
-                    正则表达式
+                <a href="/2017/10/27/flask开发二维码/">
+                    flask开发二维码
                 </a>
             </div>
         
@@ -371,7 +361,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#确定URL并抓取页面代码："><span class="toc-number">1.</span> <span class="toc-text">确定URL并抓取页面代码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#提取某一页的所有段子：-并过滤图片代码）"><span class="toc-number">2.</span> <span class="toc-text">提取某一页的所有段子：(并过滤图片代码）</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -407,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"爬虫实战一之糗事百科　| sweet　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Werkzeug散列密码　| sweet　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +431,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/23/爬虫实战之中工校网新闻/" title="Pre: 爬虫实战之中工校网新闻">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/07/21/正则表达式/" title="Next: 正则表达式">
+            <a href="/2017/10/27/flask开发二维码/" title="Next: flask开发二维码">
                 <i class="fa fa-angle-right"></i>
             </a>
         
